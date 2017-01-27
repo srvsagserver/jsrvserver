@@ -14,18 +14,12 @@ Before you can build this project, you must install and configure the following 
         npm install
 
 
-2. Build the maven project in IDEA and run 
-    
-    
-        SrvcApp
-    
-    
-configuration in debug mode
+2. Build the maven project in IDEA and run SrvcApp configuration in debug mode
 
 3. To make UI reload js right after modifications run 
 
     
-    npm run watchBuild
+     npm run watchBuild
         
         
 ## Building for production
