@@ -20,9 +20,14 @@ Before you can build this project, you must install and configure the following 
         SrvcApp
     
     
-   
 configuration in debug mode
 
+3. To make UI reload js right after modifications run 
+
+    
+    npm run watchBuild
+        
+        
 ## Building for production
 
 To optimize the srvc application for production, run:
