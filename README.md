@@ -19,7 +19,7 @@ Before you can build this project, you must install and configure the following 
 3. To make UI reload js right after modifications run 
 
     
-     npm run watchBuild
+        npm run watchBuild
         
         
 ## Building for production
