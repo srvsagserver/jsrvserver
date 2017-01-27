@@ -11,7 +11,7 @@ Before you can build this project, you must install and configure the following 
    Depending on your system, you can install Node either from source or as a pre-packaged bundle.
    
     
-    npm install
+        npm install
 
 
 2. Build the maven project in IDEA and run 
