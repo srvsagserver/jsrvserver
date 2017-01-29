@@ -1,3 +1,5 @@
+'use strict';
+
 let debug = process.env.NODE_ENV !== "production",
     webpack = require('webpack'),
     path = require('path');
@@ -24,8 +26,8 @@ module.exports = {
         filename: "index.min.js"
     },
     plugins: debug ? [] : [
-            new webpack.optimize.DedupePlugin(),
-            new webpack.optimize.OccurenceOrderPlugin(),
-            new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
-        ],
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
+    ]
 };
