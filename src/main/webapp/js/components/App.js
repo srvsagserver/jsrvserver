@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from './Header';
+import Footer from './Footer';
 
-class Layout extends React.Component {
+class App extends React.Component {
     render() {
         return (
-            <div className="ys">
+            <div className="ys container">
                 <Header />
                 {this.props.children}
                 <Footer />
@@ -15,4 +15,4 @@ class Layout extends React.Component {
     }
 }
 
-export default Layout;
+export default App;
