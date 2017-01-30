@@ -2,7 +2,8 @@
 # Project Specific
 ######################
 /target/www/**
-src/main/webapp/index.min.js
+/src/main/webapp/index.min.js
+/src/main/resources/config/application-dev.yml
 ######################
 # Node
 ######################

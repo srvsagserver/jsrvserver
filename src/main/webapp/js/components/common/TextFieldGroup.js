@@ -14,7 +14,7 @@ const TextFieldGroup = ({ name, value, label, type, error, onChange }) => {
                 name={name}
                 className="form-control"
             />
-            {error && <span className="help-block">{error}</span>}
+            {error && <span className="help-block">{label + error}</span>}
         </div>  );
 };
 
