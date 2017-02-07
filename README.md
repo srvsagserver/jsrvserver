@@ -7,11 +7,13 @@ And UI part was added using React
 
 Before you can build this project, you must install and configure the following dependencies on your machine:
 
-1. We use Node to run a development web server and build the project. 
-    Install Node first, then run
+1. We use Node to run a development web server and build the project.
+   We also use Bower to setup swagger-ui
+    Install Node and Bower first, then run
    
     
         npm install
+        bower install
 
 
 2. Build the maven project in IDEA and run SrvcApp configuration in debug mode
@@ -21,6 +23,10 @@ Before you can build this project, you must install and configure the following 
     
         npm run watchBuild
         
+4. Swagger is available under 
+
+        
+        'dev-docs' route
         
 ## Building for production
 

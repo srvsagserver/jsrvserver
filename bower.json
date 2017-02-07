@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "name": "your-services",
+  "description": "",
+  "appPath": "src/main/webapp/",
+  "authors": [
+    "avorobiov"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/srvsagserver/jsrvserver",
+  "dependencies": {
+    "swagger-ui": "2.1.5"
+  }
+}
