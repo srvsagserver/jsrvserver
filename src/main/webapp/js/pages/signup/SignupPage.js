@@ -10,7 +10,7 @@ class SignupPage extends  React.Component {
             <div className="row">
                 <div className="col-md-4 col-md-offset-4">
                     {/*TODO: remove router from here and make it a redux state change*/}
-                    <SignupForm userSignupRequest={userSignupRequest} router={this.props.router}/>
+                    <SignupForm userSignupRequest={userSignupRequest}/>
                 </div>
             </div>
         )
