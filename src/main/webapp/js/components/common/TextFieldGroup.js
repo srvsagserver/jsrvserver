@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import  '../greeting.scss'
+import  '../landing/greeting.scss'
 
 const TextFieldGroup = ({ name, value, label, type, error, onChange }) => {
     return (

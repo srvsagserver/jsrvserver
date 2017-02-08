@@ -1,7 +1,7 @@
 import React from 'react';
 import update from 'react-addons-update';
 
-import TextFieldGroup from '../../components/common/TextFieldGroup';
+import TextFieldGroup from '../common/TextFieldGroup';
 import validateInput from '../../common/validations/signin-validation'
 
 class SigninForm extends  React.Component {
