@@ -1,9 +1,7 @@
 import React from 'react';
 
-class Health extends React.Component {
-    render() {
-        return <h2>Health</h2>
-    }
-}
+const Health = () => {
+    return <h2>Health</h2>;
+};
 
 export default Health;
