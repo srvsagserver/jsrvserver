@@ -11,6 +11,7 @@ class SigninForm extends  React.Component {
             userData: {
                 login: '',
                 password: '',
+                rememberMe: 'true',
                 langKey: 'en'
             },
             errors: {},
