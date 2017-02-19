@@ -1,0 +1,23 @@
+.ys-header {
+    .navbar-default {
+        background-color: $white;
+    }
+
+    .navbar-brand {
+        color: $ys-dark-grey;
+    }
+
+    .navbar-nav > li > a {
+        &.active,
+        &:hover {
+            color: $orange;
+        }
+
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    .ys-your {
+        font-weight: 700;
+    }
+}

@@ -1,11 +1,9 @@
 import React from 'react';
-import classnames from 'classnames';
-
-import  '../landing/greeting.scss'
+import classNames from 'classnames';
 
 const TextFieldGroup = ({ name, value, label, type, error, onChange }) => {
     return (
-        <div className={classnames('form-group', { 'has-error': error })}>
+        <div className={classNames('form-group', { 'has-error': error })}>
             <label className="control-label" htmlFor={name}>{label}</label>
             <input
                 onChange={onChange}

@@ -1,40 +1,51 @@
 'use strict';
 
-let debug = process.env.NODE_ENV !== 'production',
-    webpack = require('webpack'),
-    path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
+const path = require('path');
+const debug = process.env.NODE_ENV !== 'production';
 
-module.exports = {
-    context: path.join(__dirname, 'src'),
-    devtool: debug ? 'inline-sourcemap' : null,
-    entry: './main/webapp/js/index.js',
-    module: {
-        loaders: [
-            {
-                test: /\.jsx?$/,
-                exclude: /(node_modules|bower_components)/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ['react', 'es2015', 'stage-0'],
-                    plugins: ['react-html-attrs', 'transform-decorators-legacy', 'transform-class-properties'],
+module.exports = function (env) {
+    return {
+        devtool: debug ? 'source-map' : null,
+        entry: './src/main/webapp/js/index.js',
+        output: {
+            path: __dirname + '/src/main/webapp/',
+            filename: 'index.min.js'
+        },
+        module: {
+            rules: [
+                {
+                    test: /\.jsx?$/,
+                    exclude: /(node_modules|bower_components)/,
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['react', 'es2015', 'stage-0'],
+                        plugins: ['react-html-attrs', 'transform-decorators-legacy', 'transform-class-properties'],
+                    }
+                },
+                {
+                    test: /\.scss$/,
+                    exclude: /node_modules/,
+                    use: ExtractTextPlugin.extract({
+                        fallback: 'style-loader',
+                        use: [{
+                                loader: 'css-loader',
+                                options: {
+                                    sourceMap: true
+                                }
+                            }, {
+                                loader: 'sass-loader',
+                                options: {
+                                    sourceMap: true
+                                }
+                            }]
+                    })
                 }
-            },
-            {
-                test: /\.s?css$/,
-                exclude: /node_modules/,
-                loaders: ['style', 'css', 'sass']
-            }
+            ]
+        },
+        plugins: [
+            new ExtractTextPlugin('style.css')
         ]
-    },
-    output: {
-        path: __dirname + '/src/main/webapp/',
-        filename: 'index.min.js'
-    },
-    plugins: debug ? [
-        //new webpack.HotModuleReplacementPlugin()
-    ] : [
-        new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.OccurenceOrderPlugin(),
-        new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
-    ]
+    }
 };
