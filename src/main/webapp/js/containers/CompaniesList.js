@@ -16,7 +16,7 @@ class CompaniesList extends  React.Component {
 
     render() {
         return (
-          <ul className="list-group col-md-8">
+          <ul className="list-group col-md-12">
               {this.renderList()}
           </ul>
         );

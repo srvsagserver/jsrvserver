@@ -1,13 +1,15 @@
 import React from 'react';
 
-import Header from './common/header/Header';
-import Footer from './common/Footer';
+import Header from './header/Header';
+import Footer from './Footer';
 
 const App = (props) => {
     return (
-        <div className="ys container">
+        <div className="ys-wrapper">
             <Header />
-            {props.children}
+            <div id="ys-main">
+                {props.children}
+            </div>
             <Footer />
         </div>
     );
