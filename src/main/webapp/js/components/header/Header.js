@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router';
 import classNames from 'classnames';
-
+import { hashHistory } from "react-router";
 
 class Header extends React.Component {
     constructor(props) {
@@ -13,15 +13,16 @@ class Header extends React.Component {
         };
 
         this.toggleNavCollapse = this.toggleNavCollapse.bind(this);
-        this.updateLocation = this.updateLocation.bind(this);
+    }
+
+    componentWillMount(){
+       hashHistory.listen(location => {
+           this.setState({currentLocation: location.pathname.split('/').pop()});
+        });
     }
 
     toggleNavCollapse() {
         this.setState({navCollapsed: !this.state.navCollapsed});
-    }
-
-    updateLocation() {
-        this.setState({currentLocation: this.context.router.location.pathname});
     }
 
     render() {
@@ -40,11 +41,11 @@ class Header extends React.Component {
 
                         <div className={classNames({'collapse': this.state.navCollapsed}, 'navbar-collapse')}>
                             <ul className="nav navbar-nav navbar-right">
-                                <li onClick={this.updateLocation}>
-                                    <Link to="sign-up" className={classNames({'active': this.state.currentLocation === 'sign-up'})}>Sign up</Link>
+                                <li>
+                                    <Link to="/sign-up" className={classNames({'active': this.state.currentLocation === 'sign-up'})}>Sign up</Link>
                                 </li>
-                                <li onClick={this.updateLocation}>
-                                    <Link to="sign-in" className={classNames({'active': this.state.currentLocation === 'sign-in'})}>Sign in</Link>
+                                <li>
+                                    <Link to="/sign-in" className={classNames({'active': this.state.currentLocation === 'sign-in'})}>Sign in</Link>
                                 </li>
                             </ul>
                         </div>
